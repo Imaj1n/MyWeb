@@ -62,7 +62,7 @@ def app():
         }
         # Menampilkan GIF animasi dari input
         gif_url = random.choice(list(url_gift.values()))
-        url_ayang = "Bahan_Lain/Gif_Us/Gif_Ayang1.gif"
+        url_ayang = "https://raw.githubusercontent.com/Imaj1n/MyWeb/5f99c6544c11eadf4273060158e09584376bdf41/src2/Bahan_Lain/Gif_Us/Gif_Ayang1.gif"
         #Gif_Ayang1.gif
         st.image(url_ayang,use_container_width=True)
     with colb:
