@@ -5,4 +5,4 @@ plotly==5.24.1
 streamlit-aggrid==1.0.5
 streamlit-chat==0.1.1
 streamlit-lottie==0.0.5
-streamlit_gsheets==0.0.1
+streamlit_gsheets==0.1.0
