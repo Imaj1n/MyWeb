@@ -35,7 +35,9 @@ def app():
     )
     cola,colb = st.columns(2)
     # Mendapatkan jam saat ini
-    current_hour = datetime.datetime.now().hour
+    jakarta_tz = pytz.timezone('Asia/Jakarta')
+    # Ambil waktu sekarang di zona waktu Jakarta
+    current_hour = datetime.datetime.now(jakarta_tz).hour
     # Menampilkan teks di konten utama
     st.text(f"Jam {datetime.datetime.now()}")
     if current_hour < 12:
@@ -147,8 +149,9 @@ def app():
 
     # Fungsi untuk mengecek apakah hari ini adalah ulang tahun atau ulang tahun jadian
     def check_surprise_date():
-        today = datetime.date.today()
-        
+        jakarta_tz = pytz.timezone('Asia/Jakarta')
+        # Ambil waktu sekarang di zona waktu Jakarta
+        today = datetime.date.today(jakarta_tz)
         if today == tanggal_ulang_tahun:
             return "Mett Ulang tahun ayy 🎉!", animasi_ulang_tahun
         elif today == tanggal_ulang_jadian:
@@ -158,7 +161,8 @@ def app():
 
     # Fungsi untuk mengecek apakah saat ini adalah jam 12 malam
     def check_midnight():
-        current_time = datetime.datetime.now()
+        jakarta_tz = pytz.timezone('Asia/Jakarta')
+        current_time = datetime.datetime.now(jakarta_tz)
         if current_time.hour == 0 and current_time.minute == 0:
             return True
         return False
