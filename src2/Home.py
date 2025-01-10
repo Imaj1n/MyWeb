@@ -21,6 +21,5 @@ def app():
         # Mengambil file path berdasarkan pilihan pengguna
     selected_audio = "https://raw.githubusercontent.com/Imaj1n/MyWeb/main/src2/Bahan_Lain/Music/SZA%20-%20Kill%20Bill%20(Audio).mp3"
         # Memutar audio berdasarkan pilihan
-    audio_file = open(selected_audio, "rb").read()
+    audio_file = (open(selected_audio, "rb")).read()
     st.audio(audio_file, format="audio/mp3")
-  
