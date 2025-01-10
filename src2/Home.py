@@ -36,6 +36,7 @@ def app():
     # Mendapatkan jam saat ini
     current_hour = datetime.datetime.now().hour
     # Menampilkan teks di konten utama
+    st.text(f"Jam {datetime.datetime.now()}")
     if current_hour < 12:
         condition = "Pagii"
     elif 12 <= current_hour < 15:
