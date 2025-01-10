@@ -71,5 +71,4 @@ else:
                 Wishlist.app()
 
     # Jalankan aplikasi
-    app = MultiApp()
-    app.run()
+    run()
