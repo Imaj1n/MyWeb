@@ -7,6 +7,8 @@ streamlit-chat==0.1.1
 streamlit-lottie==0.0.5
 st-gsheets-connection==0.1.0
 
+sql-metadata==2.15.0
+sqlparse==0.5.3
 google-auth==2.37.0
 google-auth-oauthlib==1.2.1
 decorator==5.1.1
