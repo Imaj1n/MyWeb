@@ -77,9 +77,9 @@ def app():
         # Memasukkan file audio lokal
         # Daftar musik
         audio = {
-            "Kill Bill - SZA": "Bahan_Lain/Music/SZA - Kill Bill (Audio).mp3",
-            "Bad - Wave to Earth": "Bahan_Lain/Music/wave to earth - bad (Official Lyric Video).mp3",
-            "Blue - Yung Kai": "Bahan_Lain/Music/Yung Kai - Blue.mp3"
+            "Kill Bill - SZA": "https://raw.githubusercontent.com/Imaj1n/MyWeb/main/src2/Bahan_Lain/Music/SZA%20-%20Kill%20Bill%20(Audio).mp3",
+            "Bad - Wave to Earth": "https://raw.githubusercontent.com/Imaj1n/MyWeb/main/src2/Bahan_Lain/Music/wave%20to%20earth%20-%20bad%20(Official%20Lyric%20Video).mp3",
+            "Blue - Yung Kai": "https://raw.githubusercontent.com/Imaj1n/MyWeb/main/src2/Bahan_Lain/Music/Yung%20Kai%20-%20Blue.mp3"
         }
 
         # Menampilkan pilihan musik di selectbox
@@ -141,8 +141,8 @@ def app():
     tanggal_ulang_jadian = datetime.date(2025, 1, 12)
 
     # Tentukan file animasi untuk ulang tahun dan ulang tahun jadian
-    animasi_ulang_tahun = "Animasi/anim.json"
-    animasi_ulang_jadian = "Animasi/anim2.json"
+    animasi_ulang_tahun = "https://raw.githubusercontent.com/Imaj1n/MyWeb/main/src2/Animasi/anim.json"
+    animasi_ulang_jadian = "https://raw.githubusercontent.com/Imaj1n/MyWeb/main/src2/Animasi/anim2.json"
 
     # Fungsi untuk mengecek apakah hari ini adalah ulang tahun atau ulang tahun jadian
     def check_surprise_date():
@@ -176,7 +176,7 @@ def app():
             st_lottie(animation_json, speed=0.7, width=600, height=400, key="animation")
             
             # Tentukan file audio berdasarkan tanggal
-            audio_file = 'Bahan_Lain/Music/LullabyThe Promised Neverland.mp3'
+            audio_file = 'https://raw.githubusercontent.com/Imaj1n/MyWeb/main/src2/Bahan_Lain/Music/LullabyThe%20Promised%20Neverland.mp3'
             st.audio(audio_file, format='audio/mp3', start_time=0)
             # Jika saat ini jam 12 malam, tampilkan Toast Notification dan efek salju
             today = datetime.date.today()
