@@ -1,14 +1,8 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import Home, Timeline, Wishlist
-# # import streamlit as st
-# # from streamlit_gsheets import GSheetsConnection
-
-# # st.title("Read Google Sheet as DataFrame")
-
-# # conn = st.connection("gsheets", type=GSheetsConnection)
-# # df = conn.read(worksheet="Sheet1")
-
+import streamlit as st
+from streamlit_gsheets import GSheetsConnection
 # Set konfigurasi halaman Streamlit
 st.set_page_config(
     page_title="Web",
@@ -21,12 +15,18 @@ if 'password_correct' not in st.session_state:
 # Jika password benar, tampilkan aplikasi
 if not st.session_state.password_correct:
     # Masukkan password untuk akses aplikasi
-    password = st.text_input('Enter password', type='password')
+    conn = st.connection("gsheets", type=GSheetsConnection)
+    df = conn.read(worksheet="Sheet1")
 
+    # st.text(str((df["Pass"].to_list())[0]))
+    # st.text(type((df["Pass"].to_list())[0]))
+
+    st.title("Login")
+    password = st.text_input('Masukkan password', type='password')
     if password =="":
         pass
     # Jika password benar, set session state dan sembunyikan input password
-    elif password == "1234":  # Ganti dengan password yang Anda inginkan
+    elif password == str(int((df["Pass"].to_list())[0])): 
         st.session_state.password_correct = True
         st.rerun()  # Refresh aplikasi setelah login berhasil
 
