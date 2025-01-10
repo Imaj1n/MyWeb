@@ -163,7 +163,7 @@ def app():
     def check_midnight():
         jakarta_tz = pytz.timezone('Asia/Jakarta')
         current_time = datetime.datetime.now(jakarta_tz)
-        if current_time.hour == 0 and current_time.minute == 0:
+        if current_time.hour == 00 and current_time.minute == 00:
             return True
         return False
 
