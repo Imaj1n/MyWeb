@@ -39,7 +39,6 @@ def app():
     # Ambil waktu sekarang di zona waktu Jakarta
     current_hour = datetime.datetime.now(jakarta_tz).hour
     # Menampilkan teks di konten utama
-    st.text(f"Jam {datetime.datetime.now()}")
     if current_hour < 12:
         condition = "Pagii"
     elif 12 <= current_hour < 15:
