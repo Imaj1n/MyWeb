@@ -201,15 +201,6 @@ def app():
     # Panggil fungsi utama untuk mengecek dan menampilkan kejutan jika perlu
     show_surprise()
 
-# Memanggil fungsi utama
-if __name__ == "__main__":
-    app()
-
-
-
-
-
-
 
 
 
