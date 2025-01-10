@@ -150,7 +150,8 @@ def app():
     def check_surprise_date():
         jakarta_tz = pytz.timezone('Asia/Jakarta')
         # Ambil waktu sekarang di zona waktu Jakarta
-        today = datetime.date.today(jakarta_tz)
+        current_hour = datetime.datetime.now(jakarta_tz).hour
+        today = datetime.date.today()
         if today == tanggal_ulang_tahun:
             return "Mett Ulang tahun ayy 🎉!", animasi_ulang_tahun
         elif today == tanggal_ulang_jadian:
