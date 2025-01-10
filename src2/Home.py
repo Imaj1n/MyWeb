@@ -19,7 +19,7 @@ def app():
     music_choice = st.selectbox("Mau Musik Apaa", list(audio.keys()), format_func=lambda x: f"{x}")
 
         # Mengambil file path berdasarkan pilihan pengguna
-    selected_audio = audio[music_choice]
+    selected_audio = "https://raw.githubusercontent.com/Imaj1n/MyWeb/main/src2/Bahan_Lain/Music/SZA%20-%20Kill%20Bill%20(Audio).mp3"
         # Memutar audio berdasarkan pilihan
     audio_file = open(selected_audio, "rb").read()
     st.audio(audio_file, format="audio/mp3")
