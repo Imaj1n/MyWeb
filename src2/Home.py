@@ -212,7 +212,6 @@
 #     # selected_audio = "https://raw.githubusercontent.com/Imaj1n/MyWeb/main/src2/Bahan_Lain/Music/SZA%20-%20Kill%20Bill%20(Audio).mp3"
 #     # Memutar audio berdasarkan pilihan
 #     # st.audio(selected_audio, format="audio/mpeg", loop=True)
-
 import random
 import streamlit as st
 import datetime
@@ -249,13 +248,15 @@ def app():
     )
     cola, colb = st.columns(2)
 
-    # Mendapatkan waktu sekarang dalam format 24 jam
-    current_time = datetime.datetime.now().strftime("%H:%M")  # Format 24 jam (jam:menit)
+    # Mendapatkan waktu saat ini dengan zona waktu lokal (misalnya, Asia/Jakarta)
+    jakarta_tz = pytz.timezone('Asia/Jakarta')
+    current_time = datetime.datetime.now(jakarta_tz).strftime("%H:%M")  # Format 24 jam (jam:menit)
+    
     # Menampilkan waktu saat ini di konten utama
     st.text(f"Jam {current_time}")
 
     # Tentukan kondisi waktu berdasarkan jam
-    current_hour = datetime.datetime.now().hour
+    current_hour = datetime.datetime.now(jakarta_tz).hour
     if current_hour < 12:
         condition = "Pagii"
     elif 12 <= current_hour < 15:
@@ -311,15 +312,26 @@ def app():
         # Memutar audio berdasarkan pilihan
         st.audio(selected_audio, format="audio/mpeg", loop=True)
     
-    # Sidebar - Menampilkan waktu sekarang di sidebar
-    st.sidebar.success(f"Waktu sekarang: {datetime.datetime.now().strftime('%H:%M')}")
-
-    # Menampilkan tanggal di sidebar
-    st.sidebar.success(f"Tanggal: {datetime.datetime.now().strftime('%d %B %Y')}")
-
-    # Menampilkan catatan kecil dan data
+    # Sidebar tetap seperti sebelumnya, tanpa perubahan
+    st.sidebar.success(f"{datetime.datetime.now().strftime('%d %B %Y')}")
     st.sidebar.subheader("Catatan Kecil")
     st.divider()
+
+    # Menampilkan pesan yang baru dimasukkan
+    d = (list((df.to_dict()).values()))[0]
+    st.sidebar.info((list(d.values()))[-1])
+
+    # Menampilkan GIF di sidebar
+    gif_for_conditions = {
+        "1": "https://i.pinimg.com/originals/b0/9a/06/b09a0682c2cd4d291bf195d52870affd.gif",
+        "2": "https://i.pinimg.com/originals/18/d7/13/18d713fbda6a28afc6ddf2cb87341a4c.gif",
+        "3": "https://i.pinimg.com/originals/1a/01/c0/1a01c05651c84d12ca135a48b71ee138.gif",
+    }
+
+    # Memilih GIF secara acak dari daftar GIF
+    selected_gif_url = random.choice(list(gif_for_conditions.values()))
+    # Menampilkan GIF di sidebar
+    st.sidebar.image(selected_gif_url, use_container_width=True)
 
     # Fungsi untuk memuat animasi Lottie
     def load_lottie_animation(file_path: str):
