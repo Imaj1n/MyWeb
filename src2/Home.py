@@ -88,8 +88,7 @@ def app():
         # Mengambil file path berdasarkan pilihan pengguna
         selected_audio = audio[music_choice]
         # Memutar audio berdasarkan pilihan
-        audio_file = open(selected_audio, "rb").read()
-        st.audio(audio_file, format="audio/mp3")
+        st.audio(selected_audio, format="audio/mpeg", loop=True)
         # Inisialisasi koneksi ke Google Sheets
         conn = st.connection("gsheets", type=GSheetsConnection)
         # Nama worksheet dan kolom
