@@ -62,7 +62,7 @@ def app():
         }
         # Menampilkan GIF animasi dari input
         gif_url = random.choice(list(url_gift.values()))
-        url_ayang = "/home/alhisyam314/Proyek_M/src2/Bahan_Lain/Gif_Us/Gif_Ayang1.gif"
+        url_ayang = "src2/Bahan_Lain/Gif_Us/Gif_Ayang1.gif"
         #Gif_Ayang1.gif
         st.image(url_ayang,use_container_width=True)
     with colb:
@@ -77,9 +77,9 @@ def app():
         # Memasukkan file audio lokal
         # Daftar musik
         audio = {
-            "Kill Bill - SZA": "/home/alhisyam314/Proyek_M/src2/Bahan_Lain/Music/SZA - Kill Bill (Audio).mp3",
-            "Bad - Wave to Earth": "/home/alhisyam314/Proyek_M/src2/Bahan_Lain/Music/wave to earth - bad (Official Lyric Video).mp3",
-            "Blue - Yung Kai": "/home/alhisyam314/Proyek_M/src2/Bahan_Lain/Music/Yung Kai - Blue.mp3"
+            "Kill Bill - SZA": "src2/Bahan_Lain/Music/SZA - Kill Bill (Audio).mp3",
+            "Bad - Wave to Earth": "src2/Bahan_Lain/Music/wave to earth - bad (Official Lyric Video).mp3",
+            "Blue - Yung Kai": "src2/Bahan_Lain/Music/Yung Kai - Blue.mp3"
         }
 
         # Menampilkan pilihan musik di selectbox
