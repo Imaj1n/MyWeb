@@ -54,3 +54,4 @@ streamlit-chat==0.1.1
 streamlit-lottie==0.0.5
 streamlit-option-menu==0.4.0
 distutils==1.0
+streamlit_gsheets==0.0.1
